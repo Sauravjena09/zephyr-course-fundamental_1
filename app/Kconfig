@@ -5,19 +5,11 @@ menuconfig LED_SUBSYSTEM
 
 if LED_SUBSYSTEM
 
-choice BLINK_SLEEP_TIME
-    prompt "LED blink sleep time"
-    default BLINK_1S
+config APP_HEARTBEAT_PERIOD_MS
+    int "Heartbeat LED period in milliseconds"
+    default 500
+    range 100 2000
 
-    config BLINK_500MS
-        bool "500ms (fast)"
-
-    config BLINK_1S
-        bool "1s (medium)"
-
-    config BLINK_2S
-        bool "2s (slow)"
-endchoice
 
 menuconfig ADVANCED_LED_SETTINGS
     bool "Advanced LED settings"
