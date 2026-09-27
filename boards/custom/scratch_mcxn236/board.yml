@@ -1,0 +1,6 @@
+board:
+  name: scratch_mcxn236
+  full_name: Custom MCXN236 From Scratch
+  vendor: custom
+  socs:
+  - name: mcxn236
