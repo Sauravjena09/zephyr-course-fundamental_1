@@ -7,10 +7,7 @@
 extern "C" {
 #endif
 
-/* Standard Sensor API is used for Task 1.
- * Custom extension APIs will be declared here for Task 2.
- */
-
+int led_sensor_set_custom_param( const struct device *dev,int new_val);
 #ifdef __cplusplus
 }
 #endif

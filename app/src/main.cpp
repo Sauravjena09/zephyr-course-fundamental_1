@@ -2,7 +2,7 @@
 #include <zephyr/device.h>
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/logging/log.h>
-
+#include "custom_drivers/led_sensor.h"
 LOG_MODULE_REGISTER(main);
 
 int main(void)
@@ -21,7 +21,7 @@ int main(void)
     }
 
     LOG_INF("Found ready device: %s", dev->name);
-
+    int custom_val = 0;
     while (1) {
         /* Task 1: sensor_sample_fetch turns the LED ON */
         LOG_INF("Calling sensor_sample_fetch (turning LED ON)...");
@@ -32,6 +32,8 @@ int main(void)
         LOG_INF("Calling sensor_channel_get (turning LED OFF)...");
         sensor_channel_get(dev, SENSOR_CHAN_ALL, NULL);
         k_sleep(K_MSEC(1000));
+        custom_val += 10;
+        led_sensor_set_custom_param(dev, custom_val);
     }
 
     return 0;

@@ -80,6 +80,16 @@ static int led_sensor_init(const struct device *dev)
     LOG_INF("LED Sensor driver initialized");
     return 0;
 }
+int led_sensor_set_custom_param(const struct device *dev,int new_value){
+    struct led_sensor_data *data= dev->data;
+    if( dev == NULL || data == NULL){
+        return -EINVAL; 
+    }
+    LOG_INF("LED SENSOR : CUSTOM PARAMETER UPDATED TO %d ", new_value);
+    return 0;
+    
+}
+
 
 /* 7. Instantiation macro per DT node */
 #define LED_SENSOR_INIT(inst)                                                  \
@@ -95,7 +105,7 @@ static int led_sensor_init(const struct device *dev)
                           &led_sensor_data_##inst,                             \
                           &led_sensor_config_##inst,                           \
                           POST_KERNEL,                                         \
-                          90,                         \
+                          CONFIG_SENSOR_INIT_PRIORITY,                         \
                           &led_sensor_api);
 
 DT_INST_FOREACH_STATUS_OKAY(LED_SENSOR_INIT)
