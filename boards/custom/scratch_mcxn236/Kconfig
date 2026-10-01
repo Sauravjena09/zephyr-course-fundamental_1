@@ -1,3 +1,0 @@
-config BOARD_SCRATCH_MCXN236
-    bool
-    select SOC_MCXN236
