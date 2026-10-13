@@ -1,0 +1,56 @@
+cmake:
+  application:
+    configuration-dir: 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf'
+    source-dir: 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf'
+  board:
+    name: 'qemu_x86'
+    path:
+     - 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86'
+    qualifiers: 'atom'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/bindings'
+    files:
+     - 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86.dts'
+    include-dirs:
+     - 'C:/Users/saura/zephyrproject/modules/hal/ambiq/dts'
+     - 'C:/Users/saura/zephyrproject/modules/hal/atmel/include'
+     - 'C:/Users/saura/zephyrproject/modules/hal/bouffalolab/include'
+     - 'C:/Users/saura/zephyrproject/modules/hal/bouffalolab/include/zephyr'
+     - 'C:/Users/saura/zephyrproject/modules/hal/gigadevice/include'
+     - 'C:/Users/saura/zephyrproject/modules/hal/infineon/dts'
+     - 'C:/Users/saura/zephyrproject/modules/hal/microchip/include'
+     - 'C:/Users/saura/zephyrproject/modules/hal/microchip/dts'
+     - 'C:/Users/saura/zephyrproject/modules/hal/nuvoton/dts'
+     - 'C:/Users/saura/zephyrproject/modules/hal/nxp/dts'
+     - 'C:/Users/saura/zephyrproject/modules/hal/stm32/dts'
+     - 'C:/Users/saura/zephyrproject/modules/hal/ti/dts'
+     - 'C:/Users/saura/zephyrproject/zephyr/include'
+     - 'C:/Users/saura/zephyrproject/zephyr/include/zephyr'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/common'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/vendor'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/rx'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/x86'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/xtensa'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/sparc'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/riscv'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/posix'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/arm64'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/arm'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts/arc'
+     - 'C:/Users/saura/zephyrproject/zephyr/dts'
+  kconfig:
+    files:
+     - 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86_defconfig'
+     - 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/prj.conf'
+     - 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+    user-files:
+     - 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: 'C:/Users/saura/zephyr-sdk-1.0.1'
+  zephyr:
+    version: '4.4.99'
+    zephyr-base: 'C:/Users/saura/zephyrproject/zephyr'
+version: '0.1.0'

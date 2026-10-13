@@ -1,0 +1,943 @@
+<testsuites>
+	<testsuite name="qemu_x86/atom" timestamp="2026-10-13T18:45:52.398090" time="0.0" tests="8" failures="8" errors="0" skipped="0">
+		<properties>
+			<property name="version" value="v4.4.0-9765-gfa3c2981db16" />
+		</properties>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_boundaries.is_full_after_fill" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf
+-- CMake version: 4.3.1
+-- Found Python3: C:/Users/saura/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.12.0", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: C:/Users/saura/zephyrproject/zephyr/.cache
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_x86, qualifiers: atom
+-- Found host-tools: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found Dtc: C:/Users/saura/AppData/Local/Microsoft/WinGet/Packages/oss-winget.dtc_Microsoft.Winget.Source_8wekyb3d8bbwe/usr/bin/dtc.exe (found suitable version "1.6.1", minimum required is "1.4.6")
+-- Found BOARD.dts: C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86.dts
+-- Generated zephyr.dts: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:213.5-12: Warning (ranges_format): /sim_flash/flash_sim@0/partitions:ranges: empty "ranges" property but its #address-cells (1) differs from /sim_flash/flash_sim@0 (2)
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #address-cells value
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #size-cells value
+&lt;stdout&gt;: Warning (avoid_unnecessary_addr_size): Failed prerequisite 'avoid_default_addr_size'
+&lt;stdout&gt;: Warning (unique_unit_address_if_enabled): Failed prerequisite 'avoid_default_addr_size'
+Parsing C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/Kconfig
+Loaded configuration 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86_defconfig'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/prj.conf'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Could NOT find Ccache (missing: CCACHE) (Required is at least version "4.12")
+Hint: The project() command has not yet been called.  It sets up system-specific search paths.
+-- Found GnuLd: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf/bin/ld.bfd.exe (found version "2.43.1")
+-- The C compiler identification is GNU 14.3.0
+-- The CXX compiler identification is GNU 14.3.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe
+CMake Warning at C:/Users/saura/zephyrproject/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: C:/Users/saura/zephyrproject/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (19.0s)
+CMake Warning in C:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/./
+
+  has 237 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    getentropy.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+-- Generating done (1.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf
+[1/144] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr), build: v4.4.0-9765-gfa3c2981db16
+[2/144] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/144] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[4/144] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[5/144] Generating include/generated/zephyr/driver-validation.h
+[6/144] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[7/144] Building C object zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj
+[8/144] Generating ../../include/generated/zephyr/heap_constants.h
+[9/144] Building C object zephyr/CMakeFiles/offsets.dir/arch/x86/core/offsets/offsets.c.obj
+[10/144] Generating include/generated/zephyr/offsets.h
+[11/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/libc/validate_libc.c.obj
+[12/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/boot_banner.c.obj
+[13/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[14/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/set.c.obj
+[15/144] Building C object CMakeFiles/app.dir/src/test_ring_buf.c.obj
+FAILED: [code=1] CMakeFiles/app.dir/src/test_ring_buf.c.obj 
+C:\Users\saura\zephyr-sdk-1.0.1\gnu\x86_64-zephyr-elf\bin\x86_64-zephyr-elf-gcc.exe -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DPICOLIBC_LONG_LONG_PRINTF_SCANF -DTC_RUNID=86c05a6f95a3e9fa4431b0873b67ec86 -D_POSIX_THREAD_SAFE_FUNCTIONS=200809L -D__LINUX_ERRNO_EXTENSIONS__ -D__ZEPHYR__=1 -IC:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/../../app/modules/ring_buf/include -IC:/Users/saura/zephyrproject/zephyr/include -IC:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom -IC:/Users/saura/zephyrproject/zephyr/lib/libc/picolibc/include -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom/. -IC:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/getopt -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/include -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/coverage -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/ztest/include -isystem C:/Users/saura/zephyrproject/zephyr/lib/libc/common/include -m32  -fno-strict-aliasing -Werror -Os -imacros C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -m32 -msoft-float -Wa,--divide --sysroot=C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf -imacros C:/Users/saura/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/saura/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections -mpreferred-stack-boundary=2 -mno-mmx -mno-sse -specs=picolibc.specs -std=c17 -MD -MT CMakeFiles/app.dir/src/test_ring_buf.c.obj -MF CMakeFiles\app.dir\src\test_ring_buf.c.obj.d -o CMakeFiles/app.dir/src/test_ring_buf.c.obj -c C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c: In function 'ring_buf_boundaries_test_is_full_after_fill':
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c:152:9: error: implicit declaration of function 'zasssert_equal'; did you mean 'zassert_equal'? [-Wimplicit-function-declaration]
+  152 |         zasssert_equal(rb_count(),4,"the count should be equal to the number of push");
+      |         ^~~~~~~~~~~~~~
+      |         zassert_equal
+[16/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[17/144] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[18/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[19/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[20/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitmask.c.obj
+[21/144] Building C object CMakeFiles/app.dir/C_/Users/saura/zephyrproject/zephyr-course-A1-/app/modules/ring_buf/src/ring_buf.c.obj
+[22/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/instr_mem.c.obj
+[23/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[24/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/init.c.obj
+[25/144] Generating linker_zephyr_pre0.cmd
+[26/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/ring_buffer.c.obj
+[27/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/clock.c.obj
+[28/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[29/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[30/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/thread_entry.c.obj
+[31/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt_common.c.obj
+[32/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/sem.c.obj
+[33/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/cpuhalt.c.obj
+[34/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_minimal.c.obj
+[35/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt.c.obj
+[36/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/prep_c.c.obj
+[37/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[38/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[39/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[40/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_init.fresh_state" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf
+-- CMake version: 4.3.1
+-- Found Python3: C:/Users/saura/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.12.0", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: C:/Users/saura/zephyrproject/zephyr/.cache
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_x86, qualifiers: atom
+-- Found host-tools: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found Dtc: C:/Users/saura/AppData/Local/Microsoft/WinGet/Packages/oss-winget.dtc_Microsoft.Winget.Source_8wekyb3d8bbwe/usr/bin/dtc.exe (found suitable version "1.6.1", minimum required is "1.4.6")
+-- Found BOARD.dts: C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86.dts
+-- Generated zephyr.dts: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:213.5-12: Warning (ranges_format): /sim_flash/flash_sim@0/partitions:ranges: empty "ranges" property but its #address-cells (1) differs from /sim_flash/flash_sim@0 (2)
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #address-cells value
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #size-cells value
+&lt;stdout&gt;: Warning (avoid_unnecessary_addr_size): Failed prerequisite 'avoid_default_addr_size'
+&lt;stdout&gt;: Warning (unique_unit_address_if_enabled): Failed prerequisite 'avoid_default_addr_size'
+Parsing C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/Kconfig
+Loaded configuration 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86_defconfig'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/prj.conf'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Could NOT find Ccache (missing: CCACHE) (Required is at least version "4.12")
+Hint: The project() command has not yet been called.  It sets up system-specific search paths.
+-- Found GnuLd: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf/bin/ld.bfd.exe (found version "2.43.1")
+-- The C compiler identification is GNU 14.3.0
+-- The CXX compiler identification is GNU 14.3.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe
+CMake Warning at C:/Users/saura/zephyrproject/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: C:/Users/saura/zephyrproject/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (19.0s)
+CMake Warning in C:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/./
+
+  has 237 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    getentropy.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+-- Generating done (1.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf
+[1/144] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr), build: v4.4.0-9765-gfa3c2981db16
+[2/144] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/144] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[4/144] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[5/144] Generating include/generated/zephyr/driver-validation.h
+[6/144] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[7/144] Building C object zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj
+[8/144] Generating ../../include/generated/zephyr/heap_constants.h
+[9/144] Building C object zephyr/CMakeFiles/offsets.dir/arch/x86/core/offsets/offsets.c.obj
+[10/144] Generating include/generated/zephyr/offsets.h
+[11/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/libc/validate_libc.c.obj
+[12/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/boot_banner.c.obj
+[13/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[14/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/set.c.obj
+[15/144] Building C object CMakeFiles/app.dir/src/test_ring_buf.c.obj
+FAILED: [code=1] CMakeFiles/app.dir/src/test_ring_buf.c.obj 
+C:\Users\saura\zephyr-sdk-1.0.1\gnu\x86_64-zephyr-elf\bin\x86_64-zephyr-elf-gcc.exe -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DPICOLIBC_LONG_LONG_PRINTF_SCANF -DTC_RUNID=86c05a6f95a3e9fa4431b0873b67ec86 -D_POSIX_THREAD_SAFE_FUNCTIONS=200809L -D__LINUX_ERRNO_EXTENSIONS__ -D__ZEPHYR__=1 -IC:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/../../app/modules/ring_buf/include -IC:/Users/saura/zephyrproject/zephyr/include -IC:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom -IC:/Users/saura/zephyrproject/zephyr/lib/libc/picolibc/include -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom/. -IC:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/getopt -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/include -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/coverage -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/ztest/include -isystem C:/Users/saura/zephyrproject/zephyr/lib/libc/common/include -m32  -fno-strict-aliasing -Werror -Os -imacros C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -m32 -msoft-float -Wa,--divide --sysroot=C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf -imacros C:/Users/saura/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/saura/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections -mpreferred-stack-boundary=2 -mno-mmx -mno-sse -specs=picolibc.specs -std=c17 -MD -MT CMakeFiles/app.dir/src/test_ring_buf.c.obj -MF CMakeFiles\app.dir\src\test_ring_buf.c.obj.d -o CMakeFiles/app.dir/src/test_ring_buf.c.obj -c C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c: In function 'ring_buf_boundaries_test_is_full_after_fill':
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c:152:9: error: implicit declaration of function 'zasssert_equal'; did you mean 'zassert_equal'? [-Wimplicit-function-declaration]
+  152 |         zasssert_equal(rb_count(),4,"the count should be equal to the number of push");
+      |         ^~~~~~~~~~~~~~
+      |         zassert_equal
+[16/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[17/144] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[18/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[19/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[20/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitmask.c.obj
+[21/144] Building C object CMakeFiles/app.dir/C_/Users/saura/zephyrproject/zephyr-course-A1-/app/modules/ring_buf/src/ring_buf.c.obj
+[22/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/instr_mem.c.obj
+[23/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[24/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/init.c.obj
+[25/144] Generating linker_zephyr_pre0.cmd
+[26/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/ring_buffer.c.obj
+[27/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/clock.c.obj
+[28/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[29/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[30/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/thread_entry.c.obj
+[31/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt_common.c.obj
+[32/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/sem.c.obj
+[33/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/cpuhalt.c.obj
+[34/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_minimal.c.obj
+[35/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt.c.obj
+[36/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/prep_c.c.obj
+[37/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[38/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[39/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[40/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_push_pop.fifo_order" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf
+-- CMake version: 4.3.1
+-- Found Python3: C:/Users/saura/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.12.0", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: C:/Users/saura/zephyrproject/zephyr/.cache
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_x86, qualifiers: atom
+-- Found host-tools: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found Dtc: C:/Users/saura/AppData/Local/Microsoft/WinGet/Packages/oss-winget.dtc_Microsoft.Winget.Source_8wekyb3d8bbwe/usr/bin/dtc.exe (found suitable version "1.6.1", minimum required is "1.4.6")
+-- Found BOARD.dts: C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86.dts
+-- Generated zephyr.dts: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:213.5-12: Warning (ranges_format): /sim_flash/flash_sim@0/partitions:ranges: empty "ranges" property but its #address-cells (1) differs from /sim_flash/flash_sim@0 (2)
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #address-cells value
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #size-cells value
+&lt;stdout&gt;: Warning (avoid_unnecessary_addr_size): Failed prerequisite 'avoid_default_addr_size'
+&lt;stdout&gt;: Warning (unique_unit_address_if_enabled): Failed prerequisite 'avoid_default_addr_size'
+Parsing C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/Kconfig
+Loaded configuration 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86_defconfig'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/prj.conf'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Could NOT find Ccache (missing: CCACHE) (Required is at least version "4.12")
+Hint: The project() command has not yet been called.  It sets up system-specific search paths.
+-- Found GnuLd: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf/bin/ld.bfd.exe (found version "2.43.1")
+-- The C compiler identification is GNU 14.3.0
+-- The CXX compiler identification is GNU 14.3.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe
+CMake Warning at C:/Users/saura/zephyrproject/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: C:/Users/saura/zephyrproject/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (19.0s)
+CMake Warning in C:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/./
+
+  has 237 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    getentropy.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+-- Generating done (1.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf
+[1/144] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr), build: v4.4.0-9765-gfa3c2981db16
+[2/144] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/144] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[4/144] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[5/144] Generating include/generated/zephyr/driver-validation.h
+[6/144] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[7/144] Building C object zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj
+[8/144] Generating ../../include/generated/zephyr/heap_constants.h
+[9/144] Building C object zephyr/CMakeFiles/offsets.dir/arch/x86/core/offsets/offsets.c.obj
+[10/144] Generating include/generated/zephyr/offsets.h
+[11/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/libc/validate_libc.c.obj
+[12/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/boot_banner.c.obj
+[13/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[14/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/set.c.obj
+[15/144] Building C object CMakeFiles/app.dir/src/test_ring_buf.c.obj
+FAILED: [code=1] CMakeFiles/app.dir/src/test_ring_buf.c.obj 
+C:\Users\saura\zephyr-sdk-1.0.1\gnu\x86_64-zephyr-elf\bin\x86_64-zephyr-elf-gcc.exe -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DPICOLIBC_LONG_LONG_PRINTF_SCANF -DTC_RUNID=86c05a6f95a3e9fa4431b0873b67ec86 -D_POSIX_THREAD_SAFE_FUNCTIONS=200809L -D__LINUX_ERRNO_EXTENSIONS__ -D__ZEPHYR__=1 -IC:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/../../app/modules/ring_buf/include -IC:/Users/saura/zephyrproject/zephyr/include -IC:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom -IC:/Users/saura/zephyrproject/zephyr/lib/libc/picolibc/include -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom/. -IC:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/getopt -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/include -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/coverage -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/ztest/include -isystem C:/Users/saura/zephyrproject/zephyr/lib/libc/common/include -m32  -fno-strict-aliasing -Werror -Os -imacros C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -m32 -msoft-float -Wa,--divide --sysroot=C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf -imacros C:/Users/saura/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/saura/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections -mpreferred-stack-boundary=2 -mno-mmx -mno-sse -specs=picolibc.specs -std=c17 -MD -MT CMakeFiles/app.dir/src/test_ring_buf.c.obj -MF CMakeFiles\app.dir\src\test_ring_buf.c.obj.d -o CMakeFiles/app.dir/src/test_ring_buf.c.obj -c C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c: In function 'ring_buf_boundaries_test_is_full_after_fill':
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c:152:9: error: implicit declaration of function 'zasssert_equal'; did you mean 'zassert_equal'? [-Wimplicit-function-declaration]
+  152 |         zasssert_equal(rb_count(),4,"the count should be equal to the number of push");
+      |         ^~~~~~~~~~~~~~
+      |         zassert_equal
+[16/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[17/144] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[18/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[19/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[20/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitmask.c.obj
+[21/144] Building C object CMakeFiles/app.dir/C_/Users/saura/zephyrproject/zephyr-course-A1-/app/modules/ring_buf/src/ring_buf.c.obj
+[22/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/instr_mem.c.obj
+[23/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[24/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/init.c.obj
+[25/144] Generating linker_zephyr_pre0.cmd
+[26/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/ring_buffer.c.obj
+[27/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/clock.c.obj
+[28/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[29/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[30/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/thread_entry.c.obj
+[31/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt_common.c.obj
+[32/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/sem.c.obj
+[33/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/cpuhalt.c.obj
+[34/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_minimal.c.obj
+[35/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt.c.obj
+[36/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/prep_c.c.obj
+[37/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[38/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[39/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[40/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_push_pop.push_full_returns_enospc" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf
+-- CMake version: 4.3.1
+-- Found Python3: C:/Users/saura/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.12.0", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: C:/Users/saura/zephyrproject/zephyr/.cache
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_x86, qualifiers: atom
+-- Found host-tools: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found Dtc: C:/Users/saura/AppData/Local/Microsoft/WinGet/Packages/oss-winget.dtc_Microsoft.Winget.Source_8wekyb3d8bbwe/usr/bin/dtc.exe (found suitable version "1.6.1", minimum required is "1.4.6")
+-- Found BOARD.dts: C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86.dts
+-- Generated zephyr.dts: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:213.5-12: Warning (ranges_format): /sim_flash/flash_sim@0/partitions:ranges: empty "ranges" property but its #address-cells (1) differs from /sim_flash/flash_sim@0 (2)
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #address-cells value
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #size-cells value
+&lt;stdout&gt;: Warning (avoid_unnecessary_addr_size): Failed prerequisite 'avoid_default_addr_size'
+&lt;stdout&gt;: Warning (unique_unit_address_if_enabled): Failed prerequisite 'avoid_default_addr_size'
+Parsing C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/Kconfig
+Loaded configuration 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86_defconfig'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/prj.conf'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Could NOT find Ccache (missing: CCACHE) (Required is at least version "4.12")
+Hint: The project() command has not yet been called.  It sets up system-specific search paths.
+-- Found GnuLd: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf/bin/ld.bfd.exe (found version "2.43.1")
+-- The C compiler identification is GNU 14.3.0
+-- The CXX compiler identification is GNU 14.3.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe
+CMake Warning at C:/Users/saura/zephyrproject/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: C:/Users/saura/zephyrproject/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (19.0s)
+CMake Warning in C:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/./
+
+  has 237 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    getentropy.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+-- Generating done (1.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf
+[1/144] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr), build: v4.4.0-9765-gfa3c2981db16
+[2/144] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/144] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[4/144] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[5/144] Generating include/generated/zephyr/driver-validation.h
+[6/144] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[7/144] Building C object zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj
+[8/144] Generating ../../include/generated/zephyr/heap_constants.h
+[9/144] Building C object zephyr/CMakeFiles/offsets.dir/arch/x86/core/offsets/offsets.c.obj
+[10/144] Generating include/generated/zephyr/offsets.h
+[11/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/libc/validate_libc.c.obj
+[12/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/boot_banner.c.obj
+[13/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[14/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/set.c.obj
+[15/144] Building C object CMakeFiles/app.dir/src/test_ring_buf.c.obj
+FAILED: [code=1] CMakeFiles/app.dir/src/test_ring_buf.c.obj 
+C:\Users\saura\zephyr-sdk-1.0.1\gnu\x86_64-zephyr-elf\bin\x86_64-zephyr-elf-gcc.exe -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DPICOLIBC_LONG_LONG_PRINTF_SCANF -DTC_RUNID=86c05a6f95a3e9fa4431b0873b67ec86 -D_POSIX_THREAD_SAFE_FUNCTIONS=200809L -D__LINUX_ERRNO_EXTENSIONS__ -D__ZEPHYR__=1 -IC:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/../../app/modules/ring_buf/include -IC:/Users/saura/zephyrproject/zephyr/include -IC:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom -IC:/Users/saura/zephyrproject/zephyr/lib/libc/picolibc/include -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom/. -IC:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/getopt -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/include -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/coverage -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/ztest/include -isystem C:/Users/saura/zephyrproject/zephyr/lib/libc/common/include -m32  -fno-strict-aliasing -Werror -Os -imacros C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -m32 -msoft-float -Wa,--divide --sysroot=C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf -imacros C:/Users/saura/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/saura/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections -mpreferred-stack-boundary=2 -mno-mmx -mno-sse -specs=picolibc.specs -std=c17 -MD -MT CMakeFiles/app.dir/src/test_ring_buf.c.obj -MF CMakeFiles\app.dir\src\test_ring_buf.c.obj.d -o CMakeFiles/app.dir/src/test_ring_buf.c.obj -c C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c: In function 'ring_buf_boundaries_test_is_full_after_fill':
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c:152:9: error: implicit declaration of function 'zasssert_equal'; did you mean 'zassert_equal'? [-Wimplicit-function-declaration]
+  152 |         zasssert_equal(rb_count(),4,"the count should be equal to the number of push");
+      |         ^~~~~~~~~~~~~~
+      |         zassert_equal
+[16/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[17/144] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[18/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[19/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[20/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitmask.c.obj
+[21/144] Building C object CMakeFiles/app.dir/C_/Users/saura/zephyrproject/zephyr-course-A1-/app/modules/ring_buf/src/ring_buf.c.obj
+[22/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/instr_mem.c.obj
+[23/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[24/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/init.c.obj
+[25/144] Generating linker_zephyr_pre0.cmd
+[26/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/ring_buffer.c.obj
+[27/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/clock.c.obj
+[28/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[29/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[30/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/thread_entry.c.obj
+[31/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt_common.c.obj
+[32/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/sem.c.obj
+[33/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/cpuhalt.c.obj
+[34/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_minimal.c.obj
+[35/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt.c.obj
+[36/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/prep_c.c.obj
+[37/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[38/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[39/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[40/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_init.reinit_clears_state" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf
+-- CMake version: 4.3.1
+-- Found Python3: C:/Users/saura/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.12.0", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: C:/Users/saura/zephyrproject/zephyr/.cache
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_x86, qualifiers: atom
+-- Found host-tools: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found Dtc: C:/Users/saura/AppData/Local/Microsoft/WinGet/Packages/oss-winget.dtc_Microsoft.Winget.Source_8wekyb3d8bbwe/usr/bin/dtc.exe (found suitable version "1.6.1", minimum required is "1.4.6")
+-- Found BOARD.dts: C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86.dts
+-- Generated zephyr.dts: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:213.5-12: Warning (ranges_format): /sim_flash/flash_sim@0/partitions:ranges: empty "ranges" property but its #address-cells (1) differs from /sim_flash/flash_sim@0 (2)
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #address-cells value
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #size-cells value
+&lt;stdout&gt;: Warning (avoid_unnecessary_addr_size): Failed prerequisite 'avoid_default_addr_size'
+&lt;stdout&gt;: Warning (unique_unit_address_if_enabled): Failed prerequisite 'avoid_default_addr_size'
+Parsing C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/Kconfig
+Loaded configuration 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86_defconfig'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/prj.conf'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Could NOT find Ccache (missing: CCACHE) (Required is at least version "4.12")
+Hint: The project() command has not yet been called.  It sets up system-specific search paths.
+-- Found GnuLd: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf/bin/ld.bfd.exe (found version "2.43.1")
+-- The C compiler identification is GNU 14.3.0
+-- The CXX compiler identification is GNU 14.3.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe
+CMake Warning at C:/Users/saura/zephyrproject/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: C:/Users/saura/zephyrproject/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (19.0s)
+CMake Warning in C:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/./
+
+  has 237 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    getentropy.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+-- Generating done (1.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf
+[1/144] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr), build: v4.4.0-9765-gfa3c2981db16
+[2/144] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/144] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[4/144] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[5/144] Generating include/generated/zephyr/driver-validation.h
+[6/144] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[7/144] Building C object zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj
+[8/144] Generating ../../include/generated/zephyr/heap_constants.h
+[9/144] Building C object zephyr/CMakeFiles/offsets.dir/arch/x86/core/offsets/offsets.c.obj
+[10/144] Generating include/generated/zephyr/offsets.h
+[11/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/libc/validate_libc.c.obj
+[12/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/boot_banner.c.obj
+[13/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[14/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/set.c.obj
+[15/144] Building C object CMakeFiles/app.dir/src/test_ring_buf.c.obj
+FAILED: [code=1] CMakeFiles/app.dir/src/test_ring_buf.c.obj 
+C:\Users\saura\zephyr-sdk-1.0.1\gnu\x86_64-zephyr-elf\bin\x86_64-zephyr-elf-gcc.exe -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DPICOLIBC_LONG_LONG_PRINTF_SCANF -DTC_RUNID=86c05a6f95a3e9fa4431b0873b67ec86 -D_POSIX_THREAD_SAFE_FUNCTIONS=200809L -D__LINUX_ERRNO_EXTENSIONS__ -D__ZEPHYR__=1 -IC:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/../../app/modules/ring_buf/include -IC:/Users/saura/zephyrproject/zephyr/include -IC:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom -IC:/Users/saura/zephyrproject/zephyr/lib/libc/picolibc/include -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom/. -IC:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/getopt -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/include -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/coverage -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/ztest/include -isystem C:/Users/saura/zephyrproject/zephyr/lib/libc/common/include -m32  -fno-strict-aliasing -Werror -Os -imacros C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -m32 -msoft-float -Wa,--divide --sysroot=C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf -imacros C:/Users/saura/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/saura/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections -mpreferred-stack-boundary=2 -mno-mmx -mno-sse -specs=picolibc.specs -std=c17 -MD -MT CMakeFiles/app.dir/src/test_ring_buf.c.obj -MF CMakeFiles\app.dir\src\test_ring_buf.c.obj.d -o CMakeFiles/app.dir/src/test_ring_buf.c.obj -c C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c: In function 'ring_buf_boundaries_test_is_full_after_fill':
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c:152:9: error: implicit declaration of function 'zasssert_equal'; did you mean 'zassert_equal'? [-Wimplicit-function-declaration]
+  152 |         zasssert_equal(rb_count(),4,"the count should be equal to the number of push");
+      |         ^~~~~~~~~~~~~~
+      |         zassert_equal
+[16/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[17/144] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[18/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[19/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[20/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitmask.c.obj
+[21/144] Building C object CMakeFiles/app.dir/C_/Users/saura/zephyrproject/zephyr-course-A1-/app/modules/ring_buf/src/ring_buf.c.obj
+[22/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/instr_mem.c.obj
+[23/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[24/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/init.c.obj
+[25/144] Generating linker_zephyr_pre0.cmd
+[26/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/ring_buffer.c.obj
+[27/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/clock.c.obj
+[28/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[29/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[30/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/thread_entry.c.obj
+[31/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt_common.c.obj
+[32/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/sem.c.obj
+[33/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/cpuhalt.c.obj
+[34/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_minimal.c.obj
+[35/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt.c.obj
+[36/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/prep_c.c.obj
+[37/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[38/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[39/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[40/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_boundaries.pop_null_returns_einval" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf
+-- CMake version: 4.3.1
+-- Found Python3: C:/Users/saura/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.12.0", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: C:/Users/saura/zephyrproject/zephyr/.cache
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_x86, qualifiers: atom
+-- Found host-tools: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found Dtc: C:/Users/saura/AppData/Local/Microsoft/WinGet/Packages/oss-winget.dtc_Microsoft.Winget.Source_8wekyb3d8bbwe/usr/bin/dtc.exe (found suitable version "1.6.1", minimum required is "1.4.6")
+-- Found BOARD.dts: C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86.dts
+-- Generated zephyr.dts: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:213.5-12: Warning (ranges_format): /sim_flash/flash_sim@0/partitions:ranges: empty "ranges" property but its #address-cells (1) differs from /sim_flash/flash_sim@0 (2)
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #address-cells value
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #size-cells value
+&lt;stdout&gt;: Warning (avoid_unnecessary_addr_size): Failed prerequisite 'avoid_default_addr_size'
+&lt;stdout&gt;: Warning (unique_unit_address_if_enabled): Failed prerequisite 'avoid_default_addr_size'
+Parsing C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/Kconfig
+Loaded configuration 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86_defconfig'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/prj.conf'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Could NOT find Ccache (missing: CCACHE) (Required is at least version "4.12")
+Hint: The project() command has not yet been called.  It sets up system-specific search paths.
+-- Found GnuLd: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf/bin/ld.bfd.exe (found version "2.43.1")
+-- The C compiler identification is GNU 14.3.0
+-- The CXX compiler identification is GNU 14.3.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe
+CMake Warning at C:/Users/saura/zephyrproject/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: C:/Users/saura/zephyrproject/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (19.0s)
+CMake Warning in C:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/./
+
+  has 237 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    getentropy.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+-- Generating done (1.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf
+[1/144] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr), build: v4.4.0-9765-gfa3c2981db16
+[2/144] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/144] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[4/144] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[5/144] Generating include/generated/zephyr/driver-validation.h
+[6/144] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[7/144] Building C object zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj
+[8/144] Generating ../../include/generated/zephyr/heap_constants.h
+[9/144] Building C object zephyr/CMakeFiles/offsets.dir/arch/x86/core/offsets/offsets.c.obj
+[10/144] Generating include/generated/zephyr/offsets.h
+[11/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/libc/validate_libc.c.obj
+[12/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/boot_banner.c.obj
+[13/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[14/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/set.c.obj
+[15/144] Building C object CMakeFiles/app.dir/src/test_ring_buf.c.obj
+FAILED: [code=1] CMakeFiles/app.dir/src/test_ring_buf.c.obj 
+C:\Users\saura\zephyr-sdk-1.0.1\gnu\x86_64-zephyr-elf\bin\x86_64-zephyr-elf-gcc.exe -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DPICOLIBC_LONG_LONG_PRINTF_SCANF -DTC_RUNID=86c05a6f95a3e9fa4431b0873b67ec86 -D_POSIX_THREAD_SAFE_FUNCTIONS=200809L -D__LINUX_ERRNO_EXTENSIONS__ -D__ZEPHYR__=1 -IC:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/../../app/modules/ring_buf/include -IC:/Users/saura/zephyrproject/zephyr/include -IC:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom -IC:/Users/saura/zephyrproject/zephyr/lib/libc/picolibc/include -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom/. -IC:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/getopt -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/include -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/coverage -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/ztest/include -isystem C:/Users/saura/zephyrproject/zephyr/lib/libc/common/include -m32  -fno-strict-aliasing -Werror -Os -imacros C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -m32 -msoft-float -Wa,--divide --sysroot=C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf -imacros C:/Users/saura/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/saura/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections -mpreferred-stack-boundary=2 -mno-mmx -mno-sse -specs=picolibc.specs -std=c17 -MD -MT CMakeFiles/app.dir/src/test_ring_buf.c.obj -MF CMakeFiles\app.dir\src\test_ring_buf.c.obj.d -o CMakeFiles/app.dir/src/test_ring_buf.c.obj -c C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c: In function 'ring_buf_boundaries_test_is_full_after_fill':
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c:152:9: error: implicit declaration of function 'zasssert_equal'; did you mean 'zassert_equal'? [-Wimplicit-function-declaration]
+  152 |         zasssert_equal(rb_count(),4,"the count should be equal to the number of push");
+      |         ^~~~~~~~~~~~~~
+      |         zassert_equal
+[16/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[17/144] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[18/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[19/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[20/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitmask.c.obj
+[21/144] Building C object CMakeFiles/app.dir/C_/Users/saura/zephyrproject/zephyr-course-A1-/app/modules/ring_buf/src/ring_buf.c.obj
+[22/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/instr_mem.c.obj
+[23/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[24/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/init.c.obj
+[25/144] Generating linker_zephyr_pre0.cmd
+[26/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/ring_buffer.c.obj
+[27/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/clock.c.obj
+[28/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[29/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[30/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/thread_entry.c.obj
+[31/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt_common.c.obj
+[32/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/sem.c.obj
+[33/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/cpuhalt.c.obj
+[34/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_minimal.c.obj
+[35/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt.c.obj
+[36/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/prep_c.c.obj
+[37/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[38/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[39/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[40/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_boundaries.peek_does_not_consume" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf
+-- CMake version: 4.3.1
+-- Found Python3: C:/Users/saura/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.12.0", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: C:/Users/saura/zephyrproject/zephyr/.cache
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_x86, qualifiers: atom
+-- Found host-tools: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found Dtc: C:/Users/saura/AppData/Local/Microsoft/WinGet/Packages/oss-winget.dtc_Microsoft.Winget.Source_8wekyb3d8bbwe/usr/bin/dtc.exe (found suitable version "1.6.1", minimum required is "1.4.6")
+-- Found BOARD.dts: C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86.dts
+-- Generated zephyr.dts: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:213.5-12: Warning (ranges_format): /sim_flash/flash_sim@0/partitions:ranges: empty "ranges" property but its #address-cells (1) differs from /sim_flash/flash_sim@0 (2)
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #address-cells value
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #size-cells value
+&lt;stdout&gt;: Warning (avoid_unnecessary_addr_size): Failed prerequisite 'avoid_default_addr_size'
+&lt;stdout&gt;: Warning (unique_unit_address_if_enabled): Failed prerequisite 'avoid_default_addr_size'
+Parsing C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/Kconfig
+Loaded configuration 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86_defconfig'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/prj.conf'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Could NOT find Ccache (missing: CCACHE) (Required is at least version "4.12")
+Hint: The project() command has not yet been called.  It sets up system-specific search paths.
+-- Found GnuLd: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf/bin/ld.bfd.exe (found version "2.43.1")
+-- The C compiler identification is GNU 14.3.0
+-- The CXX compiler identification is GNU 14.3.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe
+CMake Warning at C:/Users/saura/zephyrproject/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: C:/Users/saura/zephyrproject/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (19.0s)
+CMake Warning in C:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/./
+
+  has 237 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    getentropy.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+-- Generating done (1.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf
+[1/144] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr), build: v4.4.0-9765-gfa3c2981db16
+[2/144] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/144] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[4/144] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[5/144] Generating include/generated/zephyr/driver-validation.h
+[6/144] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[7/144] Building C object zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj
+[8/144] Generating ../../include/generated/zephyr/heap_constants.h
+[9/144] Building C object zephyr/CMakeFiles/offsets.dir/arch/x86/core/offsets/offsets.c.obj
+[10/144] Generating include/generated/zephyr/offsets.h
+[11/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/libc/validate_libc.c.obj
+[12/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/boot_banner.c.obj
+[13/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[14/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/set.c.obj
+[15/144] Building C object CMakeFiles/app.dir/src/test_ring_buf.c.obj
+FAILED: [code=1] CMakeFiles/app.dir/src/test_ring_buf.c.obj 
+C:\Users\saura\zephyr-sdk-1.0.1\gnu\x86_64-zephyr-elf\bin\x86_64-zephyr-elf-gcc.exe -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DPICOLIBC_LONG_LONG_PRINTF_SCANF -DTC_RUNID=86c05a6f95a3e9fa4431b0873b67ec86 -D_POSIX_THREAD_SAFE_FUNCTIONS=200809L -D__LINUX_ERRNO_EXTENSIONS__ -D__ZEPHYR__=1 -IC:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/../../app/modules/ring_buf/include -IC:/Users/saura/zephyrproject/zephyr/include -IC:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom -IC:/Users/saura/zephyrproject/zephyr/lib/libc/picolibc/include -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom/. -IC:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/getopt -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/include -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/coverage -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/ztest/include -isystem C:/Users/saura/zephyrproject/zephyr/lib/libc/common/include -m32  -fno-strict-aliasing -Werror -Os -imacros C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -m32 -msoft-float -Wa,--divide --sysroot=C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf -imacros C:/Users/saura/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/saura/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections -mpreferred-stack-boundary=2 -mno-mmx -mno-sse -specs=picolibc.specs -std=c17 -MD -MT CMakeFiles/app.dir/src/test_ring_buf.c.obj -MF CMakeFiles\app.dir\src\test_ring_buf.c.obj.d -o CMakeFiles/app.dir/src/test_ring_buf.c.obj -c C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c: In function 'ring_buf_boundaries_test_is_full_after_fill':
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c:152:9: error: implicit declaration of function 'zasssert_equal'; did you mean 'zassert_equal'? [-Wimplicit-function-declaration]
+  152 |         zasssert_equal(rb_count(),4,"the count should be equal to the number of push");
+      |         ^~~~~~~~~~~~~~
+      |         zassert_equal
+[16/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[17/144] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[18/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[19/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[20/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitmask.c.obj
+[21/144] Building C object CMakeFiles/app.dir/C_/Users/saura/zephyrproject/zephyr-course-A1-/app/modules/ring_buf/src/ring_buf.c.obj
+[22/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/instr_mem.c.obj
+[23/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[24/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/init.c.obj
+[25/144] Generating linker_zephyr_pre0.cmd
+[26/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/ring_buffer.c.obj
+[27/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/clock.c.obj
+[28/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[29/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[30/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/thread_entry.c.obj
+[31/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt_common.c.obj
+[32/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/sem.c.obj
+[33/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/cpuhalt.c.obj
+[34/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_minimal.c.obj
+[35/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt.c.obj
+[36/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/prep_c.c.obj
+[37/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[38/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[39/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[40/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+		<testcase classname="homework.unit.ring_buf" name="homework.unit.ring_buf.ring_buf_push_pop.single_push_pop" time="0.00">
+			<failure type="failure" message="Build failure">Loading Zephyr default modules (Zephyr base).
+-- Application: C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf
+-- CMake version: 4.3.1
+-- Found Python3: C:/Users/saura/zephyrproject/.venv/Scripts/python.exe (found suitable version "3.12.0", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: C:/Users/saura/zephyrproject/zephyr/.cache
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_x86, qualifiers: atom
+-- Found host-tools: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (C:/Users/saura/zephyr-sdk-1.0.1)
+-- Found Dtc: C:/Users/saura/AppData/Local/Microsoft/WinGet/Packages/oss-winget.dtc_Microsoft.Winget.Source_8wekyb3d8bbwe/usr/bin/dtc.exe (found suitable version "1.6.1", minimum required is "1.4.6")
+-- Found BOARD.dts: C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86.dts
+-- Generated zephyr.dts: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts
+-- Generated pickled edt: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/edt.pickle
+-- Generated devicetree_generated.h: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/devicetree_generated.h
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:213.5-12: Warning (ranges_format): /sim_flash/flash_sim@0/partitions:ranges: empty "ranges" property but its #address-cells (1) differs from /sim_flash/flash_sim@0 (2)
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #address-cells value
+C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/zephyr.dts:212.15-245.6: Warning (avoid_default_addr_size): /sim_flash/flash_sim@0/partitions: Relying on default #size-cells value
+&lt;stdout&gt;: Warning (avoid_unnecessary_addr_size): Failed prerequisite 'avoid_default_addr_size'
+&lt;stdout&gt;: Warning (unique_unit_address_if_enabled): Failed prerequisite 'avoid_default_addr_size'
+Parsing C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/Kconfig
+Loaded configuration 'C:/Users/saura/zephyrproject/zephyr/boards/qemu/x86/qemu_x86_defconfig'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/prj.conf'
+Merged configuration 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+Configuration saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/.config'
+Kconfig header saved to 'C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h'
+-- Could NOT find Ccache (missing: CCACHE) (Required is at least version "4.12")
+Hint: The project() command has not yet been called.  It sets up system-specific search paths.
+-- Found GnuLd: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf/bin/ld.bfd.exe (found version "2.43.1")
+-- The C compiler identification is GNU 14.3.0
+-- The CXX compiler identification is GNU 14.3.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe
+CMake Warning at C:/Users/saura/zephyrproject/zephyr/subsys/random/CMakeLists.txt:12 (message):
+
+
+      Warning: CONFIG_TIMER_RANDOM_GENERATOR and CONFIG_TEST_CSPRNG_GENERATOR are
+      not truly random generators. This capability is not secure and it is
+      provided for testing purposes only. Use it carefully.
+
+
+-- Found gen_kobject_list: C:/Users/saura/zephyrproject/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (19.0s)
+CMake Warning in C:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/subsys/portability/posix/c_lib_ext/CMakeFiles/subsys__portability__posix__c_lib_ext.dir/./
+
+  has 237 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    getentropy.c.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
+-- Generating done (1.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    TC_NAME
+
+
+-- Build files have been written to: C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf
+[1/144] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.4.99 (C:/Users/saura/zephyrproject/zephyr), build: v4.4.0-9765-gfa3c2981db16
+[2/144] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/144] Generating include/generated/device-api-sections.ld, include/generated/device-api-sections.cmake
+[4/144] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_exports_llext.c, syscall_weakdefs_llext.c, include/generated/zephyr/syscall_list.h
+[5/144] Generating include/generated/zephyr/driver-validation.h
+[6/144] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[7/144] Building C object zephyr/lib/heap/CMakeFiles/heap_constants.dir/heap_constants.c.obj
+[8/144] Generating ../../include/generated/zephyr/heap_constants.h
+[9/144] Building C object zephyr/CMakeFiles/offsets.dir/arch/x86/core/offsets/offsets.c.obj
+[10/144] Generating include/generated/zephyr/offsets.h
+[11/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/libc/validate_libc.c.obj
+[12/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/boot_banner.c.obj
+[13/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[14/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/set.c.obj
+[15/144] Building C object CMakeFiles/app.dir/src/test_ring_buf.c.obj
+FAILED: [code=1] CMakeFiles/app.dir/src/test_ring_buf.c.obj 
+C:\Users\saura\zephyr-sdk-1.0.1\gnu\x86_64-zephyr-elf\bin\x86_64-zephyr-elf-gcc.exe -DKERNEL -DK_HEAP_MEM_POOL_SIZE=0 -DPICOLIBC_LONG_LONG_PRINTF_SCANF -DTC_RUNID=86c05a6f95a3e9fa4431b0873b67ec86 -D_POSIX_THREAD_SAFE_FUNCTIONS=200809L -D__LINUX_ERRNO_EXTENSIONS__ -D__ZEPHYR__=1 -IC:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/../../app/modules/ring_buf/include -IC:/Users/saura/zephyrproject/zephyr/include -IC:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom -IC:/Users/saura/zephyrproject/zephyr/lib/libc/picolibc/include -IC:/Users/saura/zephyrproject/zephyr/soc/intel/atom/. -IC:/Users/saura/zephyrproject/zephyr/subsys/portability/posix/c_lib_ext/getopt -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/include -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/coverage -IC:/Users/saura/zephyrproject/zephyr/subsys/testsuite/ztest/include -isystem C:/Users/saura/zephyrproject/zephyr/lib/libc/common/include -m32  -fno-strict-aliasing -Werror -Os -imacros C:/Users/saura/zephyrproject/zephyr-course-A1-/twister-out/qemu_x86_atom/zephyr_gnu/zephyr-course-A1-/tests/ring_buf/homework.unit.ring_buf/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -m32 -msoft-float -Wa,--divide --sysroot=C:/Users/saura/zephyr-sdk-1.0.1/gnu/x86_64-zephyr-elf/x86_64-zephyr-elf -imacros C:/Users/saura/zephyrproject/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/Users/saura/zephyrproject/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/Users/saura/zephyrproject=WEST_TOPDIR -ffunction-sections -fdata-sections -mpreferred-stack-boundary=2 -mno-mmx -mno-sse -specs=picolibc.specs -std=c17 -MD -MT CMakeFiles/app.dir/src/test_ring_buf.c.obj -MF CMakeFiles\app.dir\src\test_ring_buf.c.obj.d -o CMakeFiles/app.dir/src/test_ring_buf.c.obj -c C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c: In function 'ring_buf_boundaries_test_is_full_after_fill':
+C:/Users/saura/zephyrproject/zephyr-course-A1-/tests/ring_buf/src/test_ring_buf.c:152:9: error: implicit declaration of function 'zasssert_equal'; did you mean 'zassert_equal'? [-Wimplicit-function-declaration]
+  152 |         zasssert_equal(rb_count(),4,"the count should be equal to the number of push");
+      |         ^~~~~~~~~~~~~~
+      |         zassert_equal
+[16/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[17/144] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[18/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[19/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[20/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitmask.c.obj
+[21/144] Building C object CMakeFiles/app.dir/C_/Users/saura/zephyrproject/zephyr-course-A1-/app/modules/ring_buf/src/ring_buf.c.obj
+[22/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/instr_mem.c.obj
+[23/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[24/144] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/init.c.obj
+[25/144] Generating linker_zephyr_pre0.cmd
+[26/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/ring_buffer.c.obj
+[27/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/clock.c.obj
+[28/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[29/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[30/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/thread_entry.c.obj
+[31/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt_common.c.obj
+[32/144] Building C object zephyr/CMakeFiles/zephyr.dir/kernel/sys/sem.c.obj
+[33/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/cpuhalt.c.obj
+[34/144] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_minimal.c.obj
+[35/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/getopt/getopt.c.obj
+[36/144] Building C object zephyr/arch/arch/x86/core/CMakeFiles/arch__x86__core.dir/prep_c.c.obj
+[37/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[38/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[39/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[40/144] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+ninja: build stopped: subcommand failed.
+</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

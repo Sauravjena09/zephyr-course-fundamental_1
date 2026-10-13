@@ -42,12 +42,9 @@ ZTEST(ring_buf_init, test_fresh_state)
 }
 
 ZTEST(ring_buf_init, test_reinit_clears_state)
-{
-	/* TODO(l8-task1): Push a value, call rb_init(4) again, then
-	 * verify the buffer is empty and count is 0.
-	 * See TEST_SPEC.md "Suite ring_buf_init" #2.
-	 */
-	ztest_test_skip();
+{   rb_init(4);
+    zassert_true(rb_is_empty(),"RE-init buffer must be empty");
+	zassert_equal(rb_count(),0,"re init buffer count must be 0");
 }
 
 /*
@@ -64,7 +61,12 @@ ZTEST(ring_buf_push_pop, test_single_push_pop)
 	/* TODO(l8-task1): rb_push(42), rb_pop(&v) -> v == 42, buffer empty after.
 	 * See TEST_SPEC.md "Suite ring_buf_push_pop" #1.
 	 */
-	ztest_test_skip();
+	rb_push(42);
+	uint32_t v;
+	rb_pop(&v);
+	zassert_equal(v,42,"pop value must be 42");
+	zassert_true(rb_is_empty(),"buffer must be empty after pop");
+
 }
 
 ZTEST(ring_buf_push_pop, test_fifo_order)
@@ -73,7 +75,17 @@ ZTEST(ring_buf_push_pop, test_fifo_order)
 	 * and verify the values come out as 1, 2, 3 in that order.
 	 * See TEST_SPEC.md "Suite ring_buf_push_pop" #2.
 	 */
-	ztest_test_skip();
+	rb_push(1);
+	rb_push(2);
+	rb_push(3);
+	int v1;
+	rb_pop(&v1);
+	zassert_equal(v1,1,"pop value must be 1");
+	rb_pop(&v1);
+	zassert_equal(v1,2,"pop value must be 1");
+	rb_pop(&v1);
+	zassert_equal(v1,3,"pop value must be 1");
+
 }
 
 ZTEST(ring_buf_push_pop, test_push_full_returns_enospc)
@@ -82,7 +94,12 @@ ZTEST(ring_buf_push_pop, test_push_full_returns_enospc)
 	 * one more value -> -ENOSPC.
 	 * See TEST_SPEC.md "Suite ring_buf_push_pop" #3.
 	 */
-	ztest_test_skip();
+	rb_push(1);
+	rb_push(2);
+    rb_push(3);
+	rb_push(4);
+    zassert_equal(rb_is_full(),true,"after pushing 4 values it should be full");
+	zassert_equal(rb_push(34),-ENOSPC,"IT SHOULD RETURN ERROR AFTER PUSHING EXTRA ELEMENT");
 }
 
 /*
@@ -100,15 +117,25 @@ ZTEST(ring_buf_boundaries, test_peek_does_not_consume)
 	 * -> v == 7; rb_count() still == 1.
 	 * See TEST_SPEC.md "Suite ring_buf_boundaries" #1.
 	 */
-	ztest_test_skip();
+	rb_push(7);
+	int v;
+	rb_peek(&v);
+	zassert_equal(v,7,"peeking value should be same as pushed value");
+	rb_peek(&v);
+    zassert_equal(v,7,"peeking value should be same as pushed value");
+
+
 }
 
 ZTEST(ring_buf_boundaries, test_pop_null_returns_einval)
 {
-	/* TODO(l8-task1): rb_pop(NULL) -> -EINVAL.
+	/*
+	  TODO(l8-task1): rb_pop(NULL) -> -EINVAL.
 	 * See TEST_SPEC.md "Suite ring_buf_boundaries" #2.
 	 */
-	ztest_test_skip();
+	zassert_equal(rb_pop(NULL),-EINVAL,"ERROR SHOULD BE THERE");
+
+	
 }
 
 ZTEST(ring_buf_boundaries, test_is_full_after_fill)
@@ -116,5 +143,12 @@ ZTEST(ring_buf_boundaries, test_is_full_after_fill)
 	/* TODO(l8-task1): push 4 values -> rb_is_full() == true, rb_count() == 4.
 	 * See TEST_SPEC.md "Suite ring_buf_boundaries" #3.
 	 */
-	ztest_test_skip();
+	rb_push(1);
+	rb_push(1);
+	rb_push(1);
+	rb_push(1);
+
+	zassert_equal(rb_is_full(),true,"the queue should be full");
+	zassert_equal(rb_count(),4,"the count should be equal to the number of push");
+
 }

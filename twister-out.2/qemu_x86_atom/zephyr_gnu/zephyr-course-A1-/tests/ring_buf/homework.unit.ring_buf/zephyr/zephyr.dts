@@ -1,0 +1,303 @@
+/dts-v1/;
+
+/* node '/' defined in zephyr\dts\common\skeleton.dtsi:9 */
+/ {
+	#address-cells = < 0x1 >;         /* in zephyr\dts\common\skeleton.dtsi:10 */
+	#size-cells = < 0x1 >;            /* in zephyr\dts\common\skeleton.dtsi:11 */
+	model = "QEMU X86 emulator";      /* in zephyr\boards\qemu\x86\qemu_x86.dts:20 */
+	compatible = "qemu,x86_emulator"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:21 */
+
+	/* node '/chosen' defined in zephyr\dts\common\skeleton.dtsi:13 */
+	chosen {
+		zephyr,sram = &dram0;                     /* in zephyr\boards\qemu\x86\qemu_x86.dts:37 */
+		zephyr,flash = &flash0;                   /* in zephyr\boards\qemu\x86\qemu_x86.dts:38 */
+		zephyr,console = &uart0;                  /* in zephyr\boards\qemu\x86\qemu_x86.dts:39 */
+		zephyr,bt-hci = &bt_hci_uart;             /* in zephyr\boards\qemu\x86\qemu_x86.dts:40 */
+		zephyr,shell-uart = &uart0;               /* in zephyr\boards\qemu\x86\qemu_x86.dts:41 */
+		zephyr,uart-pipe = &uart1;                /* in zephyr\boards\qemu\x86\qemu_x86.dts:42 */
+		zephyr,bt-mon-uart = &uart1;              /* in zephyr\boards\qemu\x86\qemu_x86.dts:43 */
+		zephyr,code-partition = &slot0_partition; /* in zephyr\boards\qemu\x86\qemu_x86.dts:44 */
+		zephyr,flash-controller = &sim_flash;     /* in zephyr\boards\qemu\x86\qemu_x86.dts:45 */
+		zephyr,ieee802154 = &ieee802154;          /* in zephyr\boards\qemu\x86\qemu_x86.dts:46 */
+		zephyr,canbus = &can0;                    /* in zephyr\boards\qemu\x86\qemu_x86.dts:47 */
+		zephyr,display = &ramfb0;                 /* in zephyr\boards\qemu\x86\qemu_x86.dts:48 */
+		zephyr,touch = &input0;                   /* in zephyr\boards\qemu\x86\qemu_x86.dts:49 */
+	};
+
+	/* node '/aliases' defined in zephyr\dts\common\skeleton.dtsi:15 */
+	aliases {
+		uart-0 = &uart0;     /* in zephyr\boards\qemu\x86\qemu_x86.dts:29 */
+		uart-1 = &uart1;     /* in zephyr\boards\qemu\x86\qemu_x86.dts:30 */
+		eeprom-0 = &eeprom0; /* in zephyr\boards\qemu\x86\qemu_x86.dts:31 */
+		eeprom-1 = &eeprom1; /* in zephyr\boards\qemu\x86\qemu_x86.dts:32 */
+		rtc = &rtc;          /* in zephyr\boards\qemu\x86\qemu_x86.dts:33 */
+	};
+
+	/* node '/cpus' defined in zephyr\dts\x86\intel\atom.dtsi:11 */
+	cpus {
+		#address-cells = < 0x1 >; /* in zephyr\dts\x86\intel\atom.dtsi:12 */
+		#size-cells = < 0x0 >;    /* in zephyr\dts\x86\intel\atom.dtsi:13 */
+
+		/* node '/cpus/cpu@0' defined in zephyr\dts\x86\intel\atom.dtsi:15 */
+		cpu: cpu@0 {
+			device_type = "cpu";          /* in zephyr\dts\x86\intel\atom.dtsi:16 */
+			d-cache-line-size = < 0x40 >; /* in zephyr\dts\x86\intel\atom.dtsi:17 */
+			reg = < 0x0 >;                /* in zephyr\dts\x86\intel\atom.dtsi:18 */
+			compatible = "intel,x86";     /* in zephyr\boards\qemu\x86\qemu_x86.dts:221 */
+		};
+	};
+
+	/* node '/ioapic@fec00000' defined in zephyr\dts\x86\intel\atom.dtsi:22 */
+	intc: ioapic@fec00000 {
+		compatible = "intel,ioapic"; /* in zephyr\dts\x86\intel\atom.dtsi:23 */
+		#address-cells = < 0x1 >;    /* in zephyr\dts\x86\intel\atom.dtsi:24 */
+		#interrupt-cells = < 0x3 >;  /* in zephyr\dts\x86\intel\atom.dtsi:25 */
+		reg = < 0xfec00000 0x1000 >; /* in zephyr\dts\x86\intel\atom.dtsi:26 */
+		interrupt-controller;        /* in zephyr\dts\x86\intel\atom.dtsi:27 */
+		phandle = < 0x1 >;           /* in zephyr\dts\x86\intel\atom.dtsi:55 */
+	};
+
+	/* node '/loapic@fee00000' defined in zephyr\dts\x86\intel\atom.dtsi:30 */
+	intc_loapic: loapic@fee00000 {
+		compatible = "intel,loapic"; /* in zephyr\dts\x86\intel\atom.dtsi:31 */
+		reg = < 0xfee00000 0x1000 >; /* in zephyr\dts\x86\intel\atom.dtsi:32 */
+		interrupt-controller;        /* in zephyr\dts\x86\intel\atom.dtsi:33 */
+		#interrupt-cells = < 0x3 >;  /* in zephyr\dts\x86\intel\atom.dtsi:34 */
+		#address-cells = < 0x1 >;    /* in zephyr\dts\x86\intel\atom.dtsi:35 */
+	};
+
+	/* node '/memory@0' defined in zephyr\dts\x86\intel\atom.dtsi:38 */
+	dram0: memory@0 {
+		device_type = "memory";  /* in zephyr\dts\x86\intel\atom.dtsi:39 */
+		reg = < 0x0 0x2000000 >; /* in zephyr\dts\x86\intel\atom.dtsi:40 */
+	};
+
+	/* node '/soc' defined in zephyr\dts\x86\intel\atom.dtsi:43 */
+	soc {
+		#address-cells = < 0x1 >;  /* in zephyr\dts\x86\intel\atom.dtsi:44 */
+		#size-cells = < 0x1 >;     /* in zephyr\dts\x86\intel\atom.dtsi:45 */
+		compatible = "simple-bus"; /* in zephyr\dts\x86\intel\atom.dtsi:46 */
+		ranges;                    /* in zephyr\dts\x86\intel\atom.dtsi:47 */
+
+		/* node '/soc/uart@3f8' defined in zephyr\dts\x86\intel\atom.dtsi:49 */
+		uart0: uart@3f8 {
+			compatible = "ns16550";         /* in zephyr\dts\x86\intel\atom.dtsi:50 */
+			reg = < 0x3f8 0x100 >;          /* in zephyr\dts\x86\intel\atom.dtsi:51 */
+			io-mapped;                      /* in zephyr\dts\x86\intel\atom.dtsi:52 */
+			clock-frequency = < 0x1c2000 >; /* in zephyr\dts\x86\intel\atom.dtsi:53 */
+			interrupts = < 0x4 0x100 0x3 >; /* in zephyr\dts\x86\intel\atom.dtsi:54 */
+			interrupt-parent = < &intc >;   /* in zephyr\dts\x86\intel\atom.dtsi:55 */
+			reg-shift = < 0x0 >;            /* in zephyr\dts\x86\intel\atom.dtsi:56 */
+			status = "okay";                /* in zephyr\boards\qemu\x86\qemu_x86.dts:166 */
+			current-speed = < 0x1c200 >;    /* in zephyr\boards\qemu\x86\qemu_x86.dts:167 */
+		};
+
+		/* node '/soc/uart@2f8' defined in zephyr\dts\x86\intel\atom.dtsi:60 */
+		uart1: uart@2f8 {
+			compatible = "ns16550";         /* in zephyr\dts\x86\intel\atom.dtsi:61 */
+			reg = < 0x2f8 0x100 >;          /* in zephyr\dts\x86\intel\atom.dtsi:62 */
+			io-mapped;                      /* in zephyr\dts\x86\intel\atom.dtsi:63 */
+			clock-frequency = < 0x1c2000 >; /* in zephyr\dts\x86\intel\atom.dtsi:64 */
+			interrupts = < 0x3 0x100 0x3 >; /* in zephyr\dts\x86\intel\atom.dtsi:65 */
+			interrupt-parent = < &intc >;   /* in zephyr\dts\x86\intel\atom.dtsi:66 */
+			reg-shift = < 0x0 >;            /* in zephyr\dts\x86\intel\atom.dtsi:67 */
+			status = "okay";                /* in zephyr\boards\qemu\x86\qemu_x86.dts:171 */
+			current-speed = < 0x1c200 >;    /* in zephyr\boards\qemu\x86\qemu_x86.dts:172 */
+
+			/* node '/soc/uart@2f8/bt_hci_uart' defined in zephyr\boards\qemu\x86\qemu_x86.dts:174 */
+			bt_hci_uart: bt_hci_uart {
+				compatible = "zephyr,bt-hci-uart"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:175 */
+				status = "okay";                   /* in zephyr\boards\qemu\x86\qemu_x86.dts:176 */
+			};
+		};
+
+		/* node '/soc/hpet@fed00000' defined in zephyr\dts\x86\intel\atom.dtsi:71 */
+		hpet: hpet@fed00000 {
+			compatible = "intel,hpet";    /* in zephyr\dts\x86\intel\atom.dtsi:72 */
+			reg = < 0xfed00000 0x400 >;   /* in zephyr\dts\x86\intel\atom.dtsi:73 */
+			interrupts = < 0x2 0x0 0x4 >; /* in zephyr\dts\x86\intel\atom.dtsi:74 */
+			interrupt-parent = < &intc >; /* in zephyr\dts\x86\intel\atom.dtsi:75 */
+			status = "okay";              /* in zephyr\boards\qemu\x86\qemu_x86.dts:181 */
+		};
+
+		/* node '/soc/mfd@70' defined in zephyr\dts\x86\intel\atom.dtsi:80 */
+		mfd: mfd@70 {
+			compatible = "motorola,mc146818-mfd";          /* in zephyr\dts\x86\intel\atom.dtsi:81 */
+			reg = < 0x70 0x1 0x71 0x1 0x72 0x1 0x73 0x1 >; /* in zephyr\dts\x86\intel\atom.dtsi:82 */
+			status = "okay";                               /* in zephyr\dts\x86\intel\atom.dtsi:93 */
+
+			/* node '/soc/mfd@70/rtc' defined in zephyr\dts\x86\intel\atom.dtsi:84 */
+			rtc: counter: rtc {
+				compatible = "motorola,mc146818"; /* in zephyr\dts\x86\intel\atom.dtsi:85 */
+				interrupts = < 0x8 0x100 0x3 >;   /* in zephyr\dts\x86\intel\atom.dtsi:86 */
+				interrupt-parent = < &intc >;     /* in zephyr\dts\x86\intel\atom.dtsi:87 */
+				alarms-count = < 0x1 >;           /* in zephyr\dts\x86\intel\atom.dtsi:88 */
+				status = "okay";                  /* in zephyr\dts\x86\intel\atom.dtsi:90 */
+			};
+		};
+	};
+
+	/* node '/flash@500000' defined in zephyr\boards\qemu\x86\qemu_x86.dts:23 */
+	flash0: flash@500000 {
+		compatible = "soc-nv-flash"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:24 */
+		reg = < 0x500000 0x400000 >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:25 */
+	};
+
+	/* node '/pcie0' defined in zephyr\boards\qemu\x86\qemu_x86.dts:52 */
+	pcie0: pcie0 {
+		#address-cells = < 0x1 >;       /* in zephyr\boards\qemu\x86\qemu_x86.dts:53 */
+		#size-cells = < 0x1 >;          /* in zephyr\boards\qemu\x86\qemu_x86.dts:54 */
+		compatible = "pcie-controller"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:55 */
+		acpi-hid = "PNP0A08";           /* in zephyr\boards\qemu\x86\qemu_x86.dts:56 */
+		ranges;                         /* in zephyr\boards\qemu\x86\qemu_x86.dts:57 */
+
+		/* node '/pcie0/can0' defined in zephyr\boards\qemu\x86\qemu_x86.dts:59 */
+		can0: can0 {
+			compatible = "kvaser,pcican";    /* in zephyr\boards\qemu\x86\qemu_x86.dts:60 */
+			status = "okay";                 /* in zephyr\boards\qemu\x86\qemu_x86.dts:61 */
+			vendor-id = < 0x10e8 >;          /* in zephyr\boards\qemu\x86\qemu_x86.dts:62 */
+			device-id = < 0x8406 >;          /* in zephyr\boards\qemu\x86\qemu_x86.dts:63 */
+			interrupts = < 0xb 0xa100 0x3 >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:64 */
+			interrupt-parent = < &intc >;    /* in zephyr\boards\qemu\x86\qemu_x86.dts:65 */
+
+			/* node '/pcie0/can0/can-transceiver' defined in zephyr\boards\qemu\x86\qemu_x86.dts:67 */
+			can-transceiver {
+				max-bitrate = < 0xf4240 >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:68 */
+			};
+		};
+
+		/* node '/pcie0/eth0' defined in zephyr\boards\qemu\x86\qemu_x86.dts:72 */
+		eth0: eth0 {
+			compatible = "intel,e1000";     /* in zephyr\boards\qemu\x86\qemu_x86.dts:73 */
+			vendor-id = < 0x8086 >;         /* in zephyr\boards\qemu\x86\qemu_x86.dts:75 */
+			device-id = < 0x100e >;         /* in zephyr\boards\qemu\x86\qemu_x86.dts:76 */
+			interrupts = < 0xb 0x100 0x3 >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:78 */
+			interrupt-parent = < &intc >;   /* in zephyr\boards\qemu\x86\qemu_x86.dts:79 */
+			status = "okay";                /* in zephyr\boards\qemu\x86\qemu_x86.dts:81 */
+		};
+
+		/* node '/pcie0/virtio-input-pci' defined in zephyr\boards\qemu\x86\qemu_x86.dts:84 */
+		virtio_input_pci: virtio-input-pci {
+			compatible = "virtio,pci";      /* in zephyr\boards\qemu\x86\qemu_x86.dts:85 */
+			vendor-id = < 0x1af4 >;         /* in zephyr\boards\qemu\x86\qemu_x86.dts:87 */
+			device-id = < 0x1052 >;         /* in zephyr\boards\qemu\x86\qemu_x86.dts:88 */
+			interrupts = < 0xa 0x100 0x3 >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:90 */
+			interrupt-parent = < &intc >;   /* in zephyr\boards\qemu\x86\qemu_x86.dts:91 */
+			status = "okay";                /* in zephyr\boards\qemu\x86\qemu_x86.dts:93 */
+
+			/* node '/pcie0/virtio-input-pci/virtio-input' defined in zephyr\boards\qemu\x86\qemu_x86.dts:95 */
+			input0: virtio-input {
+				compatible = "virtio,input"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:96 */
+				display = < &ramfb0 >;       /* in zephyr\boards\qemu\x86\qemu_x86.dts:97 */
+				status = "okay";             /* in zephyr\boards\qemu\x86\qemu_x86.dts:98 */
+			};
+		};
+	};
+
+	/* node '/sim_flash' defined in zephyr\boards\qemu\x86\qemu_x86.dts:103 */
+	sim_flash: sim_flash {
+		compatible = "zephyr,sim-flash"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:104 */
+		#address-cells = < 0x1 >;        /* in zephyr\boards\qemu\x86\qemu_x86.dts:106 */
+		#size-cells = < 0x1 >;           /* in zephyr\boards\qemu\x86\qemu_x86.dts:107 */
+		erase-value = < 0xff >;          /* in zephyr\boards\qemu\x86\qemu_x86.dts:108 */
+
+		/* node '/sim_flash/flash_sim@0' defined in zephyr\boards\qemu\x86\qemu_x86.dts:110 */
+		flash_sim0: flash_sim@0 {
+			compatible = "soc-nv-flash";  /* in zephyr\boards\qemu\x86\qemu_x86.dts:111 */
+			reg = < 0x0 0x100000 >;       /* in zephyr\boards\qemu\x86\qemu_x86.dts:112 */
+			erase-block-size = < 0x400 >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:114 */
+			write-block-size = < 0x4 >;   /* in zephyr\boards\qemu\x86\qemu_x86.dts:115 */
+
+			/* node '/sim_flash/flash_sim@0/partitions' defined in zephyr\boards\qemu\x86\qemu_x86.dts:185 */
+			partitions {
+				ranges;                   /* in zephyr\boards\qemu\x86\qemu_x86.dts:186 */
+				#address-cells = < 0x1 >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:187 */
+				#size-cells = < 0x1 >;    /* in zephyr\boards\qemu\x86\qemu_x86.dts:188 */
+
+				/* node '/sim_flash/flash_sim@0/partitions/partition@1000' defined in zephyr\boards\qemu\x86\qemu_x86.dts:194 */
+				storage_partition: partition@1000 {
+					compatible = "zephyr,mapped-partition"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:195 */
+					label = "storage";                      /* in zephyr\boards\qemu\x86\qemu_x86.dts:196 */
+					reg = < 0x1000 0x10000 >;               /* in zephyr\boards\qemu\x86\qemu_x86.dts:197 */
+				};
+
+				/* node '/sim_flash/flash_sim@0/partitions/partition@11000' defined in zephyr\boards\qemu\x86\qemu_x86.dts:200 */
+				slot0_partition: partition@11000 {
+					compatible = "zephyr,mapped-partition"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:201 */
+					label = "image-0";                      /* in zephyr\boards\qemu\x86\qemu_x86.dts:202 */
+					reg = < 0x11000 0x10000 >;              /* in zephyr\boards\qemu\x86\qemu_x86.dts:203 */
+				};
+
+				/* node '/sim_flash/flash_sim@0/partitions/partition@21000' defined in zephyr\boards\qemu\x86\qemu_x86.dts:206 */
+				slot1_partition: partition@21000 {
+					compatible = "zephyr,mapped-partition"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:207 */
+					label = "image-1";                      /* in zephyr\boards\qemu\x86\qemu_x86.dts:208 */
+					reg = < 0x21000 0x10000 >;              /* in zephyr\boards\qemu\x86\qemu_x86.dts:209 */
+				};
+
+				/* node '/sim_flash/flash_sim@0/partitions/partition@31000' defined in zephyr\boards\qemu\x86\qemu_x86.dts:212 */
+				eepromemu_partition: partition@31000 {
+					compatible = "zephyr,mapped-partition"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:213 */
+					label = "eeprom-emu";                   /* in zephyr\boards\qemu\x86\qemu_x86.dts:214 */
+					reg = < 0x31000 0x10000 >;              /* in zephyr\boards\qemu\x86\qemu_x86.dts:215 */
+					phandle = < 0x3 >;                      /* in zephyr\boards\qemu\x86\qemu_x86.dts:124 */
+				};
+			};
+		};
+	};
+
+	/* node '/eeprom1' defined in zephyr\boards\qemu\x86\qemu_x86.dts:119 */
+	eeprom1: eeprom1 {
+		status = "okay";                      /* in zephyr\boards\qemu\x86\qemu_x86.dts:120 */
+		compatible = "zephyr,emu-eeprom";     /* in zephyr\boards\qemu\x86\qemu_x86.dts:121 */
+		size = < 0x1000 >;                    /* in zephyr\boards\qemu\x86\qemu_x86.dts:122 */
+		pagesize = < 0x2000 >;                /* in zephyr\boards\qemu\x86\qemu_x86.dts:123 */
+		partition = < &eepromemu_partition >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:124 */
+		rambuf;                               /* in zephyr\boards\qemu\x86\qemu_x86.dts:125 */
+	};
+
+	/* node '/eeprom0' defined in zephyr\boards\qemu\x86\qemu_x86.dts:128 */
+	eeprom0: eeprom0 {
+		status = "okay";                  /* in zephyr\boards\qemu\x86\qemu_x86.dts:129 */
+		compatible = "zephyr,sim-eeprom"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:130 */
+		size = < 0x1000 >;                /* in zephyr\boards\qemu\x86\qemu_x86.dts:131 */
+	};
+
+	/* node '/ieee802154' defined in zephyr\boards\qemu\x86\qemu_x86.dts:134 */
+	ieee802154: ieee802154 {
+		compatible = "zephyr,ieee802154-uart-pipe"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:135 */
+	};
+
+	/* node '/fw-cfg@510' defined in zephyr\boards\qemu\x86\qemu_x86.dts:138 */
+	fwcfg0: fw-cfg@510 {
+		compatible = "qemu,fw-cfg-ioport"; /* in zephyr\boards\qemu\x86\qemu_x86.dts:139 */
+		reg = < 0x510 0x18 >;              /* in zephyr\boards\qemu\x86\qemu_x86.dts:140 */
+		status = "okay";                   /* in zephyr\boards\qemu\x86\qemu_x86.dts:141 */
+		phandle = < 0x4 >;                 /* in zephyr\boards\qemu\x86\qemu_x86.dts:157 */
+	};
+
+	/* node '/reserved-memory' defined in zephyr\boards\qemu\x86\qemu_x86.dts:144 */
+	reserved-memory {
+		#address-cells = < 0x1 >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:145 */
+		#size-cells = < 0x1 >;    /* in zephyr\boards\qemu\x86\qemu_x86.dts:146 */
+		ranges;                   /* in zephyr\boards\qemu\x86\qemu_x86.dts:147 */
+
+		/* node '/reserved-memory/framebuffer@1c00000' defined in zephyr\boards\qemu\x86\qemu_x86.dts:149 */
+		ramfb_mem: framebuffer@1c00000 {
+			reg = < 0x1c00000 0x400000 >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:150 */
+			no-map;                       /* in zephyr\boards\qemu\x86\qemu_x86.dts:151 */
+			phandle = < 0x5 >;            /* in zephyr\boards\qemu\x86\qemu_x86.dts:158 */
+		};
+	};
+
+	/* node '/ramfb' defined in zephyr\boards\qemu\x86\qemu_x86.dts:155 */
+	ramfb0: ramfb {
+		compatible = "qemu,ramfb";      /* in zephyr\boards\qemu\x86\qemu_x86.dts:156 */
+		fwcfg = < &fwcfg0 >;            /* in zephyr\boards\qemu\x86\qemu_x86.dts:157 */
+		memory-region = < &ramfb_mem >; /* in zephyr\boards\qemu\x86\qemu_x86.dts:158 */
+		width = < 0x400 >;              /* in zephyr\boards\qemu\x86\qemu_x86.dts:159 */
+		height = < 0x300 >;             /* in zephyr\boards\qemu\x86\qemu_x86.dts:160 */
+		status = "okay";                /* in zephyr\boards\qemu\x86\qemu_x86.dts:161 */
+		phandle = < 0x2 >;              /* in zephyr\boards\qemu\x86\qemu_x86.dts:97 */
+	};
+};

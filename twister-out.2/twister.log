@@ -1,0 +1,51 @@
+2026-10-13 18:45:47,342 - twister - INFO - Using Ninja..
+2026-10-13 18:45:47,727 - twister - INFO - Zephyr version: v4.4.0-9765-gfa3c2981db16
+2026-10-13 18:45:47,791 - twister - DEBUG - Running cmake script C:\Users\saura\zephyrproject\zephyr\cmake\verify-toolchain.cmake
+2026-10-13 18:45:47,795 - twister - DEBUG - Calling cmake: ['C:\\ST\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.EXE', '-DFORMAT=json', '-P', 'C:\\Users\\saura\\zephyrproject\\zephyr\\cmake\\verify-toolchain.cmake']
+2026-10-13 18:45:49,117 - twister - DEBUG - Finished running C:\Users\saura\zephyrproject\zephyr\cmake\verify-toolchain.cmake
+2026-10-13 18:45:49,117 - twister - INFO - Using 'zephyr/gnu' toolchain variant.
+2026-10-13 18:45:52,352 - twister - DEBUG - Reading testsuite configuration files under C:\Users\saura\zephyrproject\zephyr-course-A1-\tests\ring_buf...
+2026-10-13 18:45:52,380 - twister - DEBUG - Found possible testsuite in C:\Users\saura\zephyrproject\zephyr-course-A1-\tests\ring_buf
+2026-10-13 18:45:52,388 - twister - DEBUG - No duplicates found.
+2026-10-13 18:45:52,388 - twister - DEBUG -  platform filter: ['qemu_x86']
+2026-10-13 18:45:52,388 - twister - DEBUG - platform_pattern: []
+2026-10-13 18:45:52,389 - twister - DEBUG -    vendor filter: []
+2026-10-13 18:45:52,389 - twister - DEBUG -      arch_filter: None
+2026-10-13 18:45:52,389 - twister - DEBUG -       tag_filter: None
+2026-10-13 18:45:52,389 - twister - DEBUG -      exclude_tag: None
+2026-10-13 18:45:52,389 - twister - DEBUG - Checking platform filter: ['qemu_x86']
+2026-10-13 18:45:52,389 - twister - INFO - Building initial testsuite list...
+2026-10-13 18:45:52,397 - twister - INFO - Built testsuite list in 0.01 seconds
+2026-10-13 18:45:52,398 - twister - INFO - Writing JSON report C:\Users\saura\zephyrproject\zephyr-course-A1-\twister-out\testplan.json
+2026-10-13 18:45:52,661 - twister - INFO - Adding tasks to the queue...
+2026-10-13 18:45:52,661 - twister - DEBUG - adding qemu_x86/atom\zephyr/gnu\homework.unit.ring_buf
+2026-10-13 18:45:53,287 - twister - INFO - Added initial list of jobs to queue
+2026-10-13 18:45:54,392 - twister - DEBUG - Running cmake on C:\Users\saura\zephyrproject\zephyr-course-A1-\tests\ring_buf for qemu_x86/atom
+2026-10-13 18:45:54,395 - twister - DEBUG - Calling cmake: ['C:\\ST\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.EXE', '-BC:\\Users\\saura\\zephyrproject\\zephyr-course-A1-\\twister-out\\qemu_x86_atom\\zephyr_gnu\\zephyr-course-A1-\\tests\\ring_buf\\homework.unit.ring_buf', '-DTC_RUNID=86c05a6f95a3e9fa4431b0873b67ec86', '-DTC_NAME=homework.unit.ring_buf', '-DCONFIG_COMPILER_WARNINGS_AS_ERRORS=y', '-DEXTRA_GEN_EDT_ARGS=--edtlib-Werror', '-GNinja', '-DPython3_EXECUTABLE=C:/Users/saura/zephyrproject/.venv/Scripts/python.exe', '-DZEPHYR_TOOLCHAIN_VARIANT=zephyr/gnu', '-SC:\\Users\\saura\\zephyrproject\\zephyr-course-A1-\\tests\\ring_buf', '-DQEMU_PIPE=C:\\Users\\saura\\zephyrproject\\zephyr-course-A1-\\twister-out\\qemu_x86_atom\\zephyr_gnu\\zephyr-course-A1-\\tests\\ring_buf\\homework.unit.ring_buf\\qemu-fifo', '-DBOARD=qemu_x86/atom']
+2026-10-13 18:46:14,605 - twister - DEBUG - Finished running cmake C:\Users\saura\zephyrproject\zephyr-course-A1-\tests\ring_buf for qemu_x86/atom in 20.21 seconds
+2026-10-13 18:46:14,609 - twister - DEBUG - build test: qemu_x86/atom\zephyr/gnu\homework.unit.ring_buf
+2026-10-13 18:46:14,609 - twister - DEBUG - Building C:\Users\saura\zephyrproject\zephyr-course-A1-\tests\ring_buf for qemu_x86/atom
+2026-10-13 18:46:14,618 - twister - DEBUG - Running C:\ST\STM32CubeCLT_1.22.0\CMake\bin\cmake.EXE --build C:\Users\saura\zephyrproject\zephyr-course-A1-\twister-out\qemu_x86_atom\zephyr_gnu\zephyr-course-A1-\tests\ring_buf\homework.unit.ring_buf
+2026-10-13 18:46:18,438 - twister - DEBUG - Launched 24 jobs
+2026-10-13 18:46:19,468 - twister - ERROR - qemu_x86/atom             homework.unit.ring_buf                             [31mERROR[39m: Build failure
+2026-10-13 18:46:19,469 - twister - ERROR - see: [33mC:\Users\saura\zephyrproject\zephyr-course-A1-\twister-out\qemu_x86_atom\zephyr_gnu\zephyr-course-A1-\tests\ring_buf\homework.unit.ring_buf\build.log[39m
+2026-10-13 18:46:19,537 - twister - INFO - 1 test scenarios (1 configurations) selected, 0 configurations filtered (0 by static filter, 0 at runtime).
+2026-10-13 18:46:19,578 - twister - INFO - [32m0 of 1[39m executed test configurations passed (0.00%), 0 built (not run), 0 failed, [31m1[39m errored, with no warnings in 32.24 seconds.
+2026-10-13 18:46:19,578 - twister - INFO - 0 of 8 executed test cases passed (0.00%), 8 blocked on 1 out of total 1648 platforms (0.06%).
+2026-10-13 18:46:19,578 - twister - INFO - [32m0[39m test configurations executed on platforms, [36m1[39m test configurations were only built.
+2026-10-13 18:46:19,580 - twister - INFO - Saving reports...
+2026-10-13 18:46:19,580 - twister - INFO - Writing JSON report C:\Users\saura\zephyrproject\zephyr-course-A1-\twister-out\twister.json
+2026-10-13 18:46:19,604 - twister - INFO - Writing xunit report C:\Users\saura\zephyrproject\zephyr-course-A1-\twister-out\twister.xml...
+2026-10-13 18:46:19,607 - twister - INFO - Writing xunit report C:\Users\saura\zephyrproject\zephyr-course-A1-\twister-out\twister_report.xml...
+2026-10-13 18:46:19,613 - twister - INFO - -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+2026-10-13 18:46:19,613 - twister - INFO - The following issues were found (showing the top 10 items):
+2026-10-13 18:46:19,614 - twister - INFO - 1) homework.unit.ring_buf on qemu_x86/atom (zephyr/gnu) error (Build failure - error: implicit declaration of function 'zasssert_equal'; did you mean 'zassert_equal'? [-Wimplicit-function-declaration])
+2026-10-13 18:46:19,615 - twister - INFO - 
+2026-10-13 18:46:19,615 - twister - INFO - To rerun the tests, call twister using the following commandline:
+2026-10-13 18:46:19,615 - twister - INFO - west twister -p <PLATFORM> -s <TEST ID>, for example:
+2026-10-13 18:46:19,615 - twister - INFO - 
+2026-10-13 18:46:19,616 - twister - INFO - west twister -p qemu_x86/atom -s homework.unit.ring_buf
+2026-10-13 18:46:19,616 - twister - INFO - or with west:
+2026-10-13 18:46:19,616 - twister - INFO - west build -p -b qemu_x86/atom tests\ring_buf -T homework.unit.ring_buf
+2026-10-13 18:46:19,616 - twister - INFO - -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+2026-10-13 18:46:19,617 - twister - INFO - Run completed
